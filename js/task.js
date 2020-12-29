@@ -2,7 +2,7 @@ import users from './users.js';
 
 // console.table(users)
 
-//task-1
+//!task-1
 
 // option - 1
 
@@ -30,7 +30,7 @@ import users from './users.js';
 // console.log(getUserNames(users));
 
 
-//task-2
+//!task-2
 
 
 // option - 1
@@ -63,7 +63,7 @@ import users from './users.js';
 
 
 
- //task-3
+ //!task-3
 
 //  option - 1
 
@@ -90,7 +90,7 @@ import users from './users.js';
 
 // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
-//task-4
+//!task-4
 
 // option - 1
 
@@ -110,7 +110,7 @@ import users from './users.js';
 // console.log(getInactiveUsers(users));
 
 
-// task- 5
+//! task- 5
 
 // option - 1
 
@@ -141,7 +141,7 @@ import users from './users.js';
 // console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
 
 
-// task - 6
+//! task - 6
 
 // const getUsersWithAge = (users, min, max) => users
 //     .filter(obj => obj.age > min && obj.age < max)
@@ -153,14 +153,14 @@ import users from './users.js';
 // console.log(getUsersWithAge(users, 30, 40));
 // // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
-// task - 7
+//! task - 7
 
 // const calculateTotalBalance = users => users
 //     .reduce((totalBalance, amount) => totalBalance + amount.balance, 0)
 
 // console.log(calculateTotalBalance(users)); // 20916
 
-// task - 8
+//! task - 8
 
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
@@ -183,21 +183,62 @@ import users from './users.js';
 // console.log(getUsersWithFriend(users, 'Goldie Gentry'));
 //  // [ 'Elma Head', 'Sheree Anthony' ]
 
-// task - 9
+//! task - 9
 
 // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 
-const getNamesSortedByFriendsCount = function (users) {
-    const a = users.reduce(function (acc, array) {
+// const getNamesSortedByFriendsCount = function (users) {   
+//     users.sort(function (a, b) { return a.friends.length - b.friends.length;})
+//     // users.sort(function (a, b) {
+//     //     if (a.friends.length > b.friends.length) {
+//     //         return 1
+//     //     }
+//     //     else
+//     //         if (a.friends.length < b.friends.length) {
+//     //             return -1
+//     //         }
+//     //      else
+             
+//     //     return 0
+//     // }
+//     // )
+//     const nameArray = users.map(function (array)
+//     {
+//         return array.name
+//     })
 
-        console.log(array.friends)
-       
-        return array.friends
-    }, [])
-
-    return a
-}
-
-console.log("comsole ", getNamesSortedByFriendsCount(users));
+//     return nameArray
+// }
+// console.table(users)
+// console.log("console ", getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson',
 // 'Sheree Anthony', 'Ross Vazquez' ]
+
+//! const array = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+// const mapped = array.map(function (el, i) {
+// return { index: i, value: el };
+// });
+
+
+// // сортируем массив, содержащий уменьшенные значения
+// mapped.reduce(function (a, b) {
+//     // console.log("a", a.value)
+//     // console.log("b", b.value)
+//     if (b % 2) {
+       
+//     }
+//     // else { return 2 }
+// });
+
+
+// // контейнер для результа
+//     const result = mapped.map(function (el) {   
+//         console.log("index",el.index)
+//         console.log(el.value)
+//   return array[el.index];
+// });
+
+
+
+//     console.log(result);
