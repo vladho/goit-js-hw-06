@@ -1,9 +1,8 @@
 import users from './users.js';
 
-// console.table(users)
 
 //!task-1
-
+console.log("task - 1")
 // option - 1
 
 // const getUserNames = function (users) {
@@ -18,20 +17,18 @@ import users from './users.js';
 
 // option - 2
 
-// const getUserNames = users => users.map(obj => {
-//     return obj.name
-// }); 
+// const getUserNames = users => users.map(obj =>  obj.name); 
 // console.log(getUserNames(users));
 
 
 // option - 3
 
-// const getUserNames = users => users.map(obj =>obj.name); 
-// console.log(getUserNames(users));
+const getUserNames = users => users.map(obj =>obj.name); 
+console.log(getUserNames(users));
 
 
 //!task-2
-
+console.log("task - 2")
 
 // option - 1
 
@@ -58,13 +55,13 @@ import users from './users.js';
 
 // option - 3
 
-// const getUsersWithEyeColor = (users, color) => users.filter(obj => obj.eyeColor === color)
-// console.table(getUsersWithEyeColor(users, 'blue'))
+const getUsersWithEyeColor = (users, color) => users.filter(obj => obj.eyeColor === color)
+console.table(getUsersWithEyeColor(users, 'blue'))
 
 
 
  //!task-3
-
+console.log("task - 3")
 //  option - 1
 
 // const getUsersWithGender = function (users, gender) {
@@ -85,18 +82,18 @@ import users from './users.js';
 
 //  option - 2
 
-// const getUsersWithGender = (users, gender) => users.filter(obj => obj.gender === gender).map(array => array.name);
-// console.log(getUsersWithGender(users, 'male'));
+const getUsersWithGender = (users, gender) => users.filter(obj => obj.gender === gender).map(array => array.name);
+console.log(getUsersWithGender(users, 'male'));
 
 // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 //!task-4
-
+console.log("task - 4")
 // option - 1
 
-// const getInactiveUsers = users => users.filter(obj => !obj.isActive);
-// console.log(getInactiveUsers(users));
- // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
+const getInactiveUsers = users => users.filter(obj => !obj.isActive);
+console.table(getInactiveUsers(users));
+//  [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 // option - 2
 
@@ -111,17 +108,19 @@ import users from './users.js';
 
 
 //! task- 5
+console.log("task - 5")
+// Получить пользоваля (не массив) по email (поле email, он уникальный).
 
 // option - 1
 
 
-// const getUserWithEmail = (users, email) => users
-//     .filter(obj => obj.email === email)
-//     .map(nameOfmail => nameOfmail.name)
+const getUserWithEmail = (users, email) => users
+    .filter(obj => obj.email === email)
+    .map(nameOfmail => nameOfmail.name)
 
-// console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
+console.log(getUserWithEmail(users, 'shereeanthony@kog.com'));
 //  // {объект пользователя Sheree Anthony}
-// console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
+console.log(getUserWithEmail(users, 'elmahead@omatom.com'));
 //  // {объект пользователя Elma Head}
 
 // option - 2
@@ -142,26 +141,29 @@ import users from './users.js';
 
 
 //! task - 6
+console.log("task - 6")
+// Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 
-// const getUsersWithAge = (users, min, max) => users
-//     .filter(obj => obj.age > min && obj.age < max)
-//     .map(arr => arr.name)
+const getUsersWithAge = (users, min, max) => users
+    .filter(obj => obj.age > min && obj.age < max)
+    .map(arr => arr.name)
 
-// console.log(getUsersWithAge(users, 20, 30));
+console.log(getUsersWithAge(users, 20, 30));
 //  // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
-// console.log(getUsersWithAge(users, 30, 40));
+console.log(getUsersWithAge(users, 30, 40));
 // // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
 //! task - 7
+console.log("task - 7")
+const calculateTotalBalance = users => users
+    .reduce((totalBalance, amount) => totalBalance + amount.balance, 0)
 
-// const calculateTotalBalance = users => users
-//     .reduce((totalBalance, amount) => totalBalance + amount.balance, 0)
-
-// console.log(calculateTotalBalance(users)); // 20916
+console.log(calculateTotalBalance(users));
+ // 20916
 
 //! task - 8
-
+console.log("task - 8")
 // Массив имен всех пользователей у которых есть друг с указанным именем.
 
 // option - 1
@@ -183,25 +185,48 @@ import users from './users.js';
 // console.log(getUsersWithFriend(users, 'Goldie Gentry'));
 //  // [ 'Elma Head', 'Sheree Anthony' ]
 
-//! task - 9
+// option - 2 
 
+const getUsersWithFriend = (users, nameOfFriends) => 
+  users.reduce((acc, array) => {
+    array.friends.includes(nameOfFriends)
+      ? acc.push(array.name) : null; return acc;
+  }, [])
+  console.log(getUsersWithFriend(users, 'Briana Decker'));
+ 
+//! task - 9
+console.log("task - 9")
 // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 
-// const getNamesSortedByFriendsCount = function (users) {   
-//     users.sort(function (a, b) { return a.friends.length - b.friends.length;})
-//     // users.sort(function (a, b) {
-//     //     if (a.friends.length > b.friends.length) {
-//     //         return 1
-//     //     }
-//     //     else
-//     //         if (a.friends.length < b.friends.length) {
-//     //             return -1
-//     //         }
-//     //      else
+//   // option - 1
+
+// const getNamesSortedByFriendsCount = function (users) {  
+// users.sort(function (a, b) { return a.friends.length - b.friends.length; })
+//       const nameArray = users.map(function (array)
+//     {
+//         return array.name
+//     })
+
+//     return nameArray
+// }
+// console.log(getNamesSortedByFriendsCount(users));
+  
+  //option - 2 
+
+// const getNamesSortedByFriendsCount = function (users) {  
+//     users.sort(function (a, b) {
+//         if (a.friends.length > b.friends.length) {
+//             return 1
+//         }
+//         else
+//             if (a.friends.length < b.friends.length) {
+//                 return -1
+//             }
+//          else
              
-//     //     return 0
-//     // }
-//     // )
+//         return 0
+//     }
+//     )
 //     const nameArray = users.map(function (array)
 //     {
 //         return array.name
@@ -209,36 +234,59 @@ import users from './users.js';
 
 //     return nameArray
 // }
-// console.table(users)
-// console.log("console ", getNamesSortedByFriendsCount(users));
+// console.log(getNamesSortedByFriendsCount(users));
+
+
+// option - 3
+
+const getNamesSortedByFriendsCount = users => 
+users.sort((a, b) => a.friends.length - b.friends.length)
+      .map((array)=> array.name)
+
+console.log(getNamesSortedByFriendsCount(users));
+
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson',
 // 'Sheree Anthony', 'Ross Vazquez' ]
 
-//! const array = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-
-// const mapped = array.map(function (el, i) {
-// return { index: i, value: el };
-// });
 
 
-// // сортируем массив, содержащий уменьшенные значения
-// mapped.reduce(function (a, b) {
-//     // console.log("a", a.value)
-//     // console.log("b", b.value)
-//     if (b % 2) {
-       
+//task - 10
+console.log("task - 10")
+
+// Получить массив всех умений всех пользователей(поле skills),
+//   при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+
+// option - 1
+
+// const getSortedUniqueSkills = function (users) {
+//   const getAllSkills = users.reduce(function (TotalSkills, users) {
+//     TotalSkills.push(...users.skills)
+//     return TotalSkills;
+//   }, []
+//   )
+//  const filterArr = [];
+
+//   getAllSkills.filter(function (skills) {
+//     if (!filterArr.includes(skills)) {
+//       filterArr.push(skills)
 //     }
-//     // else { return 2 }
-// });
+//     return filterArr;
+//   }
+//   )
 
+//   return filterArr.sort()
 
-// // контейнер для результа
-//     const result = mapped.map(function (el) {   
-//         console.log("index",el.index)
-//         console.log(el.value)
-//   return array[el.index];
-// });
+// }
+// console.log(getSortedUniqueSkills(users));
 
+// option - 2
 
+const getSortedUniqueSkills = users =>
+  users.reduce((TotalSkills, users) => { TotalSkills.push(...users.skills); return TotalSkills; }, [])
+    // users.reduce((TotalSkills, users) => TotalSkills = [...TotalSkills, ...users.skills], [])
+    .filter(skills => !users.includes(skills) ? users.push(skills): null)
+    .sort();
+console.log(getSortedUniqueSkills(users));
 
-//     console.log(result);
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 
+// 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
