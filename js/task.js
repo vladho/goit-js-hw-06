@@ -91,20 +91,20 @@ console.log(getUsersWithGender(users, 'male'));
 console.log("task - 4")
 // option - 1
 
-const getInactiveUsers = users => users.filter(obj => !obj.isActive);
-console.table(getInactiveUsers(users));
+// const getInactiveUsers = users => users.filter(obj => !obj.isActive);
+// console.table(getInactiveUsers(users));
 //  [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 // option - 2
 
-// const getInactiveUsers = function (users) {
-//     const filtOfActive = users.filter(function (active) {
-//         return active.isActive === false
-//     })
-//     return filtOfActive
-// }
+const getInactiveUsers = function (users) {
+    const filtOfActive = users.filter(function (active) {
+        return active.isActive
+    })
+    return filtOfActive
+}
 
-// console.log(getInactiveUsers(users));
+console.table(getInactiveUsers(users));
 
 
 //! task- 5
@@ -146,7 +146,7 @@ console.log("task - 6")
 
 const getUsersWithAge = (users, min, max) => users
     .filter(obj => obj.age > min && obj.age < max)
-    .map(arr => arr.name)
+
 
 console.log(getUsersWithAge(users, 20, 30));
 //  // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
